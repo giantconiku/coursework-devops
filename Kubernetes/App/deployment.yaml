@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coursework
+  labels:
+    app: coursework
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coursework
+  template:
+    metadata:
+      labels:
+        app: coursework
+    spec:
+      containers:
+        - name: coursework
+          image: docker.io/rng-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: logs-volume
+              mountPath: /var/logs
+      volumes:
+        - name: logs-volume
+          persistentVolumeClaim:
+            claimName: logs-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: logs-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

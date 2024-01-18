@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-svc1
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - protocol: TCP
+      port: 9091
+      targetPort: 9090
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-svc2
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - protocol: TCP
+      port: 9092
+      targetPort: 9090
+  type: NodePort
+  
