@@ -3,7 +3,7 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
 
     <!-- Define the default log file location -->
-    <property name="LOG_FILE" value="random-number-generator-app.log" />
+    <property name="LOG_FILE" value="/var/logs/random-number-generator-app.log" />
 
     <!-- Console Appender -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -26,6 +26,11 @@
     </appender>
 
     <!-- Set the default log level and attach the appenders -->
+    <logger name="com.giant.RandomNumberGenerator" level="debug" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </logger>
+
     <root level="info">
         <appender-ref ref="console" />
         <appender-ref ref="file" />

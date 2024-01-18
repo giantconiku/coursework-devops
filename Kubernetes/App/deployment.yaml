@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: coursework
-          image: docker.io/rng-app:latest
+          image: giantconiku/coursework-devops:5
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
