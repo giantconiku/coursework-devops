@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
 
     <!-- Define the default log file location -->
-    <property name="LOG_FILE" value="/var/logs/random-number-generator-app.log" />
+    <property name="LOG_FILE" value="random-number-generator-app.log" />
 
     <!-- Console Appender -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
