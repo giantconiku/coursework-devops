@@ -1,2 +1,2 @@
 com\giant\RandomNumberGenerator\RandomNumberGeneratorApplication.class
-com\giant\RandomNumberGenerator\rest\Controller.class
+com\giant\RandomNumberGenerator\controller\IAmAController.class

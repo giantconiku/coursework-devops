@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: coursework
-          image: giantconiku/coursework-devops:7
+          image: giantconiku/coursework-devops:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
