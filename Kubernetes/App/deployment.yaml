@@ -5,7 +5,7 @@ metadata:
   labels:
     app: coursework
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: coursework
@@ -27,14 +27,3 @@ spec:
         - name: logs-volume
           persistentVolumeClaim:
             claimName: logs-pvc
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: logs-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
